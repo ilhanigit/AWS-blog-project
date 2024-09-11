@@ -80,11 +80,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'cblog.wsgi.application'
 
 def get_ssm_parameters():
-    ssm = boto3.client('ssm', region_name='us-east-1')
+    ssm = boto3.client('ssm', region_name='us-east-2')
 
     # AWS SSM Parametr define
-    username_param = ssm.get_parameter(Name="/<yourname>/capstone/username", WithDecryption=True)
-    password_param = ssm.get_parameter(Name="/<yourname>/capstone/password", WithDecryption=True)
+    username_param = ssm.get_parameter(Name="/abraham/capstone/username", WithDecryption=True)
+    password_param = ssm.get_parameter(Name="/abraham/capstone/password", WithDecryption=True)
 
 
     # Parametre retrieve
@@ -102,7 +102,7 @@ DATABASES = {
         'NAME': 'clarusway',
         'USER': db_username,
         'PASSWORD': db_password,
-        'HOST': 'xxxxxxxxxxxxxxxxxxxxxxxxxx.us-east-1.rds.amazonaws.com',
+        'HOST': 'capstone.clwi2ckc4buj.us-east-2.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
@@ -156,9 +156,9 @@ LOGIN_REDIRECT_URL = "blog:list"
 LOGIN_URL = "login"
 
 
-AWS_STORAGE_BUCKET_NAME = 'xxxxxxx-static-capstone' # please enter your s3 bucket name
+AWS_STORAGE_BUCKET_NAME = 'awscapstones-abraham-blog' # please enter your s3 bucket name
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_S3_REGION_NAME = "us-east-1" # please enter your s3 region 
+AWS_S3_REGION_NAME = "us-east-2" # please enter your s3 region 
 AWS_DEFAULT_ACL = 'public-read'
 
 AWS_LOCATION = 'static'
