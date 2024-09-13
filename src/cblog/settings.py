@@ -99,10 +99,10 @@ db_username, db_password = get_ssm_parameters()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog-database',
+        'NAME': 'blog_database',
         'USER': db_username,
         'PASSWORD': db_password,
-        'HOST': 'blog-project-rds.c1c8mokm63q3.us-east-1.rds.amazonaws.com',
+        'HOST': 'blog-database.c1c8mokm63q3.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
